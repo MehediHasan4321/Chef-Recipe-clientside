@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../../sharePage/Header/Header';
-import Footer from '../../sharePage/Footer/Footer';
-
+import './Main.css'
 const Main = () => {
     return (
-        <div>
-            <Header/>
-            <Footer/>
+        <div className='customBanner w-full h-screen'>
+            <div className='container mx-auto'>
+
+            </div>
         </div>
     );
 };

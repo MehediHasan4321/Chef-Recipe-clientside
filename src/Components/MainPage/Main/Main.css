@@ -1,0 +1,7 @@
+.customBanner{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://www.yourfreecareertest.com/wp-content/uploads/2016/07/chef.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
