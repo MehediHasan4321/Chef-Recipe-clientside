@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import Ratings from '../../../sharePage/Ratings/Ratings';
 
 const ChefImgSlider = ({ chef }) => {
-    const { chef_img, chef_name, from, rating, Year_Of_Experince, total_likes, id } = chef
-
+    const { chef_img, chef_name, from, rating, Year_Of_Experince, total_likes, id,recipe } = chef
     return (
         <div className='border-2 w-auto flex gap-3 h-96 mx-4'>
-            <img className='w-60 ' src={chef_img} alt="" />
+            <img className='w-48 md:w-60 ' src={chef_img} alt="" />
             <div className=' flex items-center pl-4'>
                 <div className=' space-y-3 text-gray-600'>
                     <h1 className='text-2xl'>{chef_name}</h1>
                     <h2 className='text-xl'>From : {from}</h2>
                     <p>Experence {Year_Of_Experince} <small>Years+</small></p>
+                    <p>Total Recepi : {recipe.length}</p>
                     <p className=' flex items-center gap-2'> <FaHeart />{total_likes}</p>
                     <Ratings num={rating}/>
                    

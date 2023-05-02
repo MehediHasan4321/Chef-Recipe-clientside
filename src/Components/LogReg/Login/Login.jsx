@@ -7,7 +7,7 @@ const Login = () => {
     const {signIn} = useContext(AuthContext)
     const location =  useLocation()
     const navigate =  useNavigate()
-    const from = location.state?.from?.pathName || '/'
+    const from = location.state?.from?.pathname || '/'
     const handleLogIn = e=>{
         e.preventDefault()
         const form = e.target;
