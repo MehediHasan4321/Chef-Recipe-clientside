@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import Recepis from './Recepis/Recepis';
 
 const ChefRecepis = () => {
     const data = useLoaderData({})
-    const {chef_img,chef_name,Year_Of_Experince,rating,recipe,total_likes,from,social_media,description} = data
+    const { chef_img, chef_name, Year_Of_Experince, rating, recipe, total_likes, from, social_media, description } = data
 
     return (
         <div className='container mx-auto my-12'>
@@ -15,17 +16,17 @@ const ChefRecepis = () => {
                     <p className='text-xl font-semibold'>From : {from}</p>
                     <p className='text-xl'>Year Of Experience {Year_Of_Experince} <small>Years+</small></p>
                     <p>Rating {rating}</p>
-                    <p className=' flex items-center gap-3'><FaHeart/> {total_likes}</p>
+                    <p className=' flex items-center gap-3'><FaHeart /> {total_likes}</p>
                     <div>
                         {
-                            social_media.map(social=><button className='py-2 px-3 text-center text-white bg-amber-400 rounded-md mx-2 font-semibold'>{social}</button>)
+                            social_media.map(social => <button className='py-2 px-3 text-center text-white bg-amber-400 rounded-md mx-2 font-semibold'>{social}</button>)
                         }
                     </div>
                     <p>{description}</p>
                 </div>
             </div>
-            <div>
-                        
+            <div className=' mt-12'>
+                <Recepis recepes={recipe} />
             </div>
         </div>
     );
