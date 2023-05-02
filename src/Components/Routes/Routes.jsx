@@ -3,6 +3,8 @@ import Main from "../MainPage/Main/Main"
 import Home from "../MainPage/Home/Home"
 import Blog from "../MainPage/Blog/Blog"
 import ChefRecepis from "../PrivetPage/ChefRecepis/ChefRecepis"
+import Login from "../LogReg/Login/Login"
+import Regeister from "../LogReg/Regeister/Regeister"
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:3000/chef/${params.id}`)
             }
         ]
+    },
+    {
+        path:'/login',
+        element:<Login/>
+    },
+    {
+        path:'/regeister',
+        element:<Regeister/>
     }
 ])
 
