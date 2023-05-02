@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaHeart, FaLink } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
+import Ratings from '../../../sharePage/Ratings/Ratings';
+
 const ChefImgSlider = ({ chef }) => {
     const { chef_img, chef_name, from, rating, Year_Of_Experince, total_likes, id } = chef
 
@@ -11,9 +13,10 @@ const ChefImgSlider = ({ chef }) => {
                 <div className=' space-y-3 text-gray-600'>
                     <h1 className='text-2xl'>{chef_name}</h1>
                     <h2 className='text-xl'>From : {from}</h2>
-                    <p>Experence {Year_Of_Experince}</p>
+                    <p>Experence {Year_Of_Experince} <small>Years+</small></p>
                     <p className=' flex items-center gap-2'> <FaHeart />{total_likes}</p>
-                    <p>{rating}</p>
+                    <Ratings num={rating}/>
+                   
                     <button className='pt-4'><Link to={`/chef/${id}`} className='py-3 px-4 bg-amber-400 text-white rounded-md font-semibold text-lg'>View Recepi</Link></button>
                 </div>
             </div>
