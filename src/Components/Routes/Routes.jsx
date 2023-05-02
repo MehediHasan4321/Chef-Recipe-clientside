@@ -5,6 +5,8 @@ import Blog from "../MainPage/Blog/Blog"
 import ChefRecepis from "../PrivetPage/ChefRecepis/ChefRecepis"
 import Login from "../LogReg/Login/Login"
 import Regeister from "../LogReg/Regeister/Regeister"
+import LogReg from "../LogReg/LogReg"
+import Protectedroute from "../ProtectedRoute/Protectedroute"
 
 const router = createBrowserRouter([
     {
@@ -21,18 +23,25 @@ const router = createBrowserRouter([
             },
             {
                 path:'/chef/:id',
-                element:<ChefRecepis/>,
+                element:<Protectedroute><ChefRecepis/></Protectedroute>,
                 loader:({params})=>fetch(`http://localhost:3000/chef/${params.id}`)
             }
         ]
     },
     {
-        path:'/login',
-        element:<Login/>
-    },
-    {
-        path:'/regeister',
-        element:<Regeister/>
+        path:'logReg',
+        element:<LogReg/>,
+        children:[
+            {
+                path:'/logReg/login',
+                element:<Login/>
+            },
+            {
+                path:'/logReg/regeister',
+                element:<Regeister/>
+            }
+
+        ]
     }
 ])
 
