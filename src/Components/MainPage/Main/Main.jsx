@@ -3,6 +3,7 @@ import './Main.css'
 import Chief from '../Chief/Chief';
 import TrandingFoods from '../TrandingFoods/TrandingFoods';
 import OurStory from '../OurStory/OurStory';
+import Testimonial from '../Testimonial/Testimonial';
 const Main = () => {
     return (
         <>
@@ -14,6 +15,7 @@ const Main = () => {
             </div>
             <Chief />
             <OurStory/>
+            <Testimonial/>
         </>
     );
 };
