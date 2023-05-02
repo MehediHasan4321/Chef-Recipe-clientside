@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaHeart, FaLink } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 const ChefImgSlider = ({ chef }) => {
-    const { chef_img, chef_name, from, rating, Year_Of_Experince, total_likes } = chef
-    console.log(chef)
+    const { chef_img, chef_name, from, rating, Year_Of_Experince, total_likes, id } = chef
+
     return (
         <div className='border-2 w-auto flex gap-3 h-96 mx-4'>
             <img className='w-60 ' src={chef_img} alt="" />
@@ -13,7 +14,7 @@ const ChefImgSlider = ({ chef }) => {
                     <p>Experence {Year_Of_Experince}</p>
                     <p className=' flex items-center gap-2'> <FaHeart />{total_likes}</p>
                     <p>{rating}</p>
-                    <button className='py-3 px-4 bg-amber-400 text-white rounded-md font-semibold text-lg'>View Recepi</button>
+                    <button className='pt-4'><Link to={`/chef/${id}`} className='py-3 px-4 bg-amber-400 text-white rounded-md font-semibold text-lg'>View Recepi</Link></button>
                 </div>
             </div>
         </div>
