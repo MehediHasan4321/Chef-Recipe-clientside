@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link,useLocation, useNavigate } from 'react-router-dom';
 import ThirdPartyLogin from '../ThirdPartyLogin/ThirdPartyLogin';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Toaster, toast } from 'react-hot-toast';
@@ -17,7 +17,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value
         signIn(email,password)
-        .then(()=>{
+        .then((user)=>{
             form.reset()
             toast.success('You are login successfully')
             navigate(from,{replace:true})
