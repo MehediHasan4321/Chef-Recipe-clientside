@@ -18,8 +18,8 @@ const OurStory = () => {
             </div>
             <div className=' col-span-1 relative'>
                 <img src={img_URL} alt="" />
-                <img className='w-32 md:w-full absolute top-32 right-0' src={tomato_img} alt="tomato image" />
-                <img className=' w-20 md:w-full absolute top-60' src={piza_img} alt="" />
+                <img className='w-32 md:w-60 absolute top-32 right-0' src={tomato_img} alt="tomato image" />
+                <img className=' w-20 md:w-32 absolute top-60' src={piza_img} alt="" />
             </div>
         </div>
     );

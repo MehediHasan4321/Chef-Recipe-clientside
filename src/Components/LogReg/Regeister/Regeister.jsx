@@ -22,7 +22,7 @@ const Regeister = () => {
     }
     return (
         <div className='container mx-auto w-full h-auto flex flex-col items-center py-8'>
-            <form onSubmit={handleSignUp} className='border-2 border-[#ABABAB] rounded space-y-8 w-[570px] h-auto px-[55px] py-[37px] bg-white mt-32'>
+            <form onSubmit={handleSignUp} className='border-2 border-[#ABABAB] rounded space-y-8 w-96 md:w-[570px] h-auto px-[55px] py-[37px] bg-white mt-32'>
                 <h3 className='text-3xl font-semibold'>Create an account</h3>
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="text" name='firstName' placeholder='Enter Yor Name' />
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="email" name='email' placeholder='Username Or Email' />

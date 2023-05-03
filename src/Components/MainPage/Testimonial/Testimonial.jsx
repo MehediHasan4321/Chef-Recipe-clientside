@@ -14,6 +14,7 @@ const Testimonial = () => {
     const { chif_img, title, review } = data
     const settings = {
         infinite: true,
+        dots:true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,

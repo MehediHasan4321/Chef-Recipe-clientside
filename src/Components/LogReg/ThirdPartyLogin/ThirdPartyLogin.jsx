@@ -18,7 +18,7 @@ const ThirdPartyLogin = () => {
             })
     }
     return (
-        <div className='container mx-auto mb-12 space-y-5'>
+        <div className='container mx-auto mb-12 space-y-5 w-96 md:w-full'>
             <div className=' flex items-center gap-3 mt-8'>
                 <hr className=' border-[1px] border-[#C5C5C5] w-[200px]' /> <p className='text-lg font-semibold'>Or</p> <hr className=' border-[1px] border-[#C5C5C5] w-[200px]' />
             </div>

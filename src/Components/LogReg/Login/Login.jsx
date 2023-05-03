@@ -25,7 +25,7 @@ const Login = () => {
     }
     return (
         <div className='container mx-auto w-full flex flex-col justify-center items-center'>
-            <div className='border-2 border-[#ABABAB] rounded w-[570px] h-auto px-[55px] py-[37px] bg-white mt-32'>
+            <div className='border-2 border-[#ABABAB] rounded w-96 md:w-[570px] h-auto px-[55px] py-[37px] bg-white mt-32'>
                 <h3 className='text-3xl font-semibold'>Login Your Account</h3>
                 <form className=' space-y-8 my-4' onSubmit={handleLogIn}>
                     <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="email" name='email' placeholder='Username Or Password' />
