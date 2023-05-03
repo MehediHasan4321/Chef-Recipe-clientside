@@ -7,6 +7,7 @@ import Login from "../LogReg/Login/Login"
 import Regeister from "../LogReg/Regeister/Regeister"
 import LogReg from "../LogReg/LogReg"
 import Protectedroute from "../ProtectedRoute/Protectedroute"
+import FourOFour from "../fourOForePage/FourOFour"
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             }
 
         ]
+    },
+    {
+        path:'*',
+        element:<FourOFour/>
     }
 ])
 
