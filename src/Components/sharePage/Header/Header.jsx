@@ -8,7 +8,7 @@ const Header = () => {
     const hanldeLogOut = () => {
         logOut()
     }
-   
+   setTimeout(()=>{setShow(false)},8000)
     return (
         <div className=' bg-transparent bg-gray-400 h-20'>
             <div className='container mx-auto flex justify-between items-center h-full relative'>
@@ -17,7 +17,7 @@ const Header = () => {
                     <NavLink to={'/'} className={({ isActive }) => isActive ? ' text-amber-400' : 'text-black'}>Home</NavLink>
                     <NavLink to={'/blog'} className={({ isActive }) => isActive ? ' text-amber-400' : 'text-black'}>Blog</NavLink>
                     {
-                        user ? user?.photoURL ? <img onClick={() => setShow(!show)} title={user?.displayName} className='w-10 h-10 border-[1px] rounded-full cursor-pointer' src={user?.photoURL} alt="Pic" /> : <div title={user?.displayName} className=' cursor-pointer w-10 h-10 text-center rounded-full text-3xl border-2'>{user?.displayName.slice(0, 1)}</div> : <NavLink to={'/logReg/login'}>Login </NavLink>
+                        user ? user?.photoURL ? <img onClick={() => setShow(!show)} title={user?.displayName} className='w-10 h-10 border-[1px] rounded-full cursor-pointer' src={user?.photoURL} alt="Pic" /> : <div onClick={()=>setShow(!show)} title={user?.displayName} className=' cursor-pointer w-10 h-10 text-center rounded-full text-3xl border-2'>{user?.displayName?.slice(0, 1)}</div> : <NavLink to={'/logReg/login'}>Login </NavLink>
                     }
 
 
