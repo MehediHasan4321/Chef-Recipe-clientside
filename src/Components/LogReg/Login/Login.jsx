@@ -42,7 +42,7 @@ const Login = () => {
                         <p className=' cursor-pointer text-amber-400 hover:text-amber-500 text-lg font-semibold underline' >Forget Passowrd</p>
                     </div>
                     <button className='w-full bg-amber-400 py-3 text-lg font-semibold'>Login</button>
-                    <Toaster/>
+                    <Toaster position="top-right"/>
                 </form>
 
 

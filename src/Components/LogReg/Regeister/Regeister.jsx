@@ -31,7 +31,7 @@ const Regeister = () => {
         }
         singUpWithEmail(email,password)
         .then(()=>{
-            toast('Your account created successfully')
+            toast.success('Your account created successfully')
             updateProfile(auth.currentUser,{
                 displayName:name,photoURL:photoUrl
             })
@@ -57,7 +57,7 @@ const Regeister = () => {
                     error && <small className='text-red-500 text-center'>{error}</small>
                 }
             </form>
-            <Toaster/>
+            <Toaster position="top-right"/>
             <div>
                <ThirdPartyLogin/>
             </div>

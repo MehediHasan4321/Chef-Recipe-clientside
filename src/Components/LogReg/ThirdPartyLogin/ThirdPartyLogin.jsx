@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import googleLogo from '../../../assets/googleLogo.png'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'react-hot-toast';
 const ThirdPartyLogin = () => {
     const { singUpWithGoogle, singUpWithGitHub } = useContext(AuthContext)
    
@@ -11,7 +12,7 @@ const ThirdPartyLogin = () => {
     const googleLogin = () => {
         singUpWithGoogle()
             .then(() => {
-                alert("Login successfull")
+                toast.success("Login successfull")
                 navigate(from, {replace:true})
             })
             .catch(err => {
@@ -21,7 +22,7 @@ const ThirdPartyLogin = () => {
     const githubLogin = ()=>{
         singUpWithGitHub()
         .then(()=>{
-            alert('Login With Github Successful')
+            toast.success('Login With Github Successful')
             navigate(from,{replace:true})
         })
         .catch(err=>{
@@ -41,6 +42,7 @@ const ThirdPartyLogin = () => {
                 <img className='mr-32' src={googleLogo} alt="google Logo" />
                 <p className='text-md font-semibold'>Continue with Google</p>
             </div>
+            <Toaster position="top-right"/>
         </div>
     );
 };

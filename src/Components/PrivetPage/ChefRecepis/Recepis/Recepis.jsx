@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
 import Ratings from '../../../sharePage/Ratings/Ratings';
-import { FaClock, FaHeart } from 'react-icons/fa';
+import { FaClock } from 'react-icons/fa';
 import { Toaster, toast } from 'react-hot-toast';
 
-const Recepis = ({ recepes }) => {
-    const [dis,setDis] = useState(false)
+const Recepis = ({ recepes}) => {
+
     return (
         <div className='grid grid-cols-3 gap-4'>
             {
@@ -16,11 +15,11 @@ const Recepis = ({ recepes }) => {
                             <p className='flex items-center gap-2'><FaClock className='text-amber-400' /> {recepe.time_to_cook}</p>
                             <Ratings num={recepe.rating} />
 
-                            <button disabled={dis} onClick={() => {
-                                toast(`${recepe.name_of_recipe} is your favorite`)
-                                
+                            <button onClick={(e) => {
+                                toast.success(`${recepe.name_of_recipe} is your favorite`)
+                                e.target.setAttribute('disabled', true)
                             }} className=' text-5xl text-amber-400 disabled:text-gray-500'>&hearts;</button>
-                            <Toaster />
+                            <Toaster position="top-right" />
                         </div>
                         <p className='mt-1'>{recepe.how_to_cook.length > 100 ? recepe.how_to_cook.slice(0, 90) : recepe.how_to_cook}</p>
                     </div>
