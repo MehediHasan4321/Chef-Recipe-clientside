@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import ThirdPartyLogin from '../ThirdPartyLogin/ThirdPartyLogin';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext)
     const location =  useLocation()
     const navigate =  useNavigate()
+    const [error,setError] = useState('')
+    setTimeout(()=>{setError('')},8000)
     const from = location.state?.from?.pathname || '/'
     const handleLogIn = e=>{
         e.preventDefault()
@@ -16,11 +19,12 @@ const Login = () => {
         signIn(email,password)
         .then(()=>{
             form.reset()
-            alert('You are Login successfull')
+            toast.success('You are login successfully')
             navigate(from,{replace:true})
+            
         })
         .catch(err=>{
-            console.log(err.message)
+            setError(err.message)
         })
     }
     return (
@@ -38,8 +42,13 @@ const Login = () => {
                         <p className=' cursor-pointer text-amber-400 hover:text-amber-500 text-lg font-semibold underline' >Forget Passowrd</p>
                     </div>
                     <button className='w-full bg-amber-400 py-3 text-lg font-semibold'>Login</button>
+                    <Toaster/>
                 </form>
+
+
+                
                 <p className='text-center font-semibold '>Don't have an account? <Link to={'/logReg/regeister'} className=' cursor-pointer text-amber-400 hover:text-amber-500  font-semibold underline'>Create an account</Link></p>
+                {error && <small className='text-red-500 text-center'>{error}</small>}
             </div>
             <div>
             <ThirdPartyLogin/>

@@ -22,7 +22,7 @@ const ThirdPartyLogin = () => {
         singUpWithGitHub()
         .then(()=>{
             alert('Login With Github Successful')
-            navigate(from,{relative:true})
+            navigate(from,{replace:true})
         })
         .catch(err=>{
             console.log(err.message)

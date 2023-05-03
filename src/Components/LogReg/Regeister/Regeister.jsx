@@ -1,9 +1,17 @@
-import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import ThirdPartyLogin from '../ThirdPartyLogin/ThirdPartyLogin';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Toaster, toast } from 'react-hot-toast';
 const Regeister = () => {
     const {singUpWithEmail} = useContext(AuthContext)
+    const [error,setError] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/'
+    setTimeout(() => {
+        setError('')
+    }, 8000);
     const handleSignUp = e=>{
         e.preventDefault()
         const form = e.target;
@@ -11,13 +19,22 @@ const Regeister = () => {
         const email = form.email.value;
         const password = form.password.value;
         const conformPassword = form.conformPassword.value;
+        if(email === ''){
+            setError('Plz Provide a Email')
+            return
+        }
+        if(password.length < 6){
+            setError('Your Password should be more than 6 charecter')
+            return
+        }
         singUpWithEmail(email,password)
         .then(()=>{
-            <Navigate to={'/'}></Navigate>
+            toast('Your account created successfully')
             form.reset()
+            navigate(from,{replace:true})
         })
         .catch(err=>{
-            console.log(err.message)
+            setError(err.message)
         })
     }
     return (
@@ -30,7 +47,11 @@ const Regeister = () => {
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="password" name='conformPassword' placeholder='Confrim Passowrd' />
                 <button className='w-full bg-amber-400 py-3 text-lg font-semibold'>Create an account</button>
                 <p className='text-center font-semibold'>Already have an account? <Link to={'/logReg/login'} className=' cursor-pointer text-amber-400 hover:text-amber-500 font-semibold underline'>Login</Link></p>
+                {
+                    error && <small className='text-red-500 text-center'>{error}</small>
+                }
             </form>
+            <Toaster/>
             <div>
                <ThirdPartyLogin/>
             </div>
