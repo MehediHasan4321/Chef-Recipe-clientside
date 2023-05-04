@@ -6,7 +6,7 @@ const OurStory = () => {
     const [data,setData] =  useState([])
     useEffect(()=>{
         setLoading(true)
-        fetch('http://localhost:3000/ourStory')
+        fetch('https://chef-recipe-hunting-server-mehedihasan4321.vercel.app/ourStory')
         .then(res=>res.json())
         .then(data=>setData(data))
         .finally(()=>setLoading(false))

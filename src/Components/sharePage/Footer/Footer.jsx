@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Footer = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:3000/footer")
+        fetch("https://chef-recipe-hunting-server-mehedihasan4321.vercel.app/footer")
             .then(res => res.json())
             .then(data => setData(data))
     }, [])

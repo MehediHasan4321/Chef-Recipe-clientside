@@ -9,7 +9,7 @@ const Testimonial = () => {
     const [data, setData] = useState({})
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:3000/testimonial')
+        fetch('https://chef-recipe-hunting-server-mehedihasan4321.vercel.app/testimonial')
             .then(res => res.json())
             .then(data => setData(data))
             .finally(()=>{

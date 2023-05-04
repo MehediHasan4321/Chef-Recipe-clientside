@@ -50,7 +50,7 @@ const Regeister = () => {
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="text" name='name' placeholder='Enter Yor Name' />
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="email" name='email' placeholder='Username Or Email' />
                 <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="password" name='password' placeholder='Passowrd' />
-                <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="url" name='photoUrl' placeholder='Upload Your Profile Picture' />
+                <input className=' w-full py-3 placeholder:text-black font-semibold text-md outline-none border-b-[1px] border-[#C5C5C5] ' type="url" name='photoUrl' placeholder='Upload Your Profile Picture URL' />
                 <button className='w-full bg-amber-400 py-3 text-lg font-semibold'>Create an account</button>
                 <p className='text-center font-semibold'>Already have an account? <Link to={'/logReg/login'} className=' cursor-pointer text-amber-400 hover:text-amber-500 font-semibold underline'>Login</Link></p>
                 {
