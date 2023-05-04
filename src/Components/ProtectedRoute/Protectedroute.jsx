@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import Spinner from '../sharePage/Spinner/Spinner';
 
 const Protectedroute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
@@ -8,9 +9,7 @@ const Protectedroute = ({ children }) => {
 
 
     if (loading) {
-        return <div className='container mx-auto flex justify-center my-8'>
-            <span className=' text-center  bg-amber-400 font-semibold'>Loading ......</span>
-        </div>
+        return <Spinner/>
     }
     if (user) {
         return children
